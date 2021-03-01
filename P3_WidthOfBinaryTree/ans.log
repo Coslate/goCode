@@ -1,0 +1,32 @@
+
+level = 0
+9
+level = 1
+8 7
+level = 2
+6 5 4
+level = 3
+3
+
+---->level = 0, 1
+----->calDistance()...
+in_list = 1 
+start_idx = 0, end_idx = 0, dist = 1
+
+---->level = 1, 1 1
+----->calDistance()...
+in_list = 1 1 
+start_idx = 0, end_idx = 1, dist = 2
+
+---->level = 2, 1 0 1 1
+----->calDistance()...
+in_list = 1 0 1 1 
+start_idx = 0, end_idx = 3, dist = 4
+
+---->level = 3, 0 0 0 1 0 0
+----->calDistance()...
+in_list = 0 0 0 1 0 0 
+start_idx = 3, end_idx = 3, dist = 1
+
+answer: max_width = 4
+formal answer: max_width = 4
