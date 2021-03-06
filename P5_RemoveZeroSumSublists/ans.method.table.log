@@ -1,0 +1,7 @@
+Example1 answer : orig_list = [3 2 1 -1 -2]
+> Use table method...
+Example1 answer : new_list  = [3]
+------------------------------------------------------
+Example2 answer : orig_list = [-5 2 1 -3 10 1 2 -2]
+> Use table method...
+Example2 answer : new_list  = [-5 10 1]

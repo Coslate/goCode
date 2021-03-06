@@ -1,0 +1,24 @@
+Example1 answer : orig_list = [3 2 1 -1 -2]
+> Use naive method...
+current_node = 3, ans_pos = -1, curr_pos = 0
+current_node = 2, ans_pos = -1, curr_pos = 1
+current_node = 1, ans_pos = -1, curr_pos = 2
+current_node = -1, ans_pos = 2, curr_pos = 3
+start_node = 2, end_node = -1, start_pos = 2, end_pos = 3
+current_node = -2, ans_pos = 1, curr_pos = 2
+start_node = 3, end_node = -2, start_pos = 1, end_pos = 2
+Example1 answer : new_list  = [3]
+------------------------------------------------------
+Example2 answer : orig_list = [-5 2 1 -3 10 1 2 -2]
+> Use naive method...
+current_node = -5, ans_pos = -1, curr_pos = 0
+current_node = 2, ans_pos = -1, curr_pos = 1
+current_node = 1, ans_pos = -1, curr_pos = 2
+current_node = -3, ans_pos = 1, curr_pos = 3
+start_node = -5, end_node = -3, start_pos = 1, end_pos = 3
+current_node = 10, ans_pos = -1, curr_pos = 1
+current_node = 1, ans_pos = -1, curr_pos = 2
+current_node = 2, ans_pos = -1, curr_pos = 3
+current_node = -2, ans_pos = 3, curr_pos = 4
+start_node = 1, end_node = -2, start_pos = 3, end_pos = 4
+Example2 answer : new_list  = [-5 10 1]
