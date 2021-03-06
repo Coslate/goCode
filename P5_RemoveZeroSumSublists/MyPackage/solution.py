@@ -86,7 +86,7 @@ class Solution:
 
     # @param head: ListNode
     # @retrun ListNode
-    def removeZeroSumSublists(self, head):
+    def removeZeroSumSublistsNaive(self, head):
         # Implement me
         ans_pos = -1
         new_head = head
@@ -109,4 +109,30 @@ class Solution:
             curr_pos = curr_pos + 1
 
         return new_head
+
+    def removeZeroSumSublistsTable(self, head):
+        table = {}
+        dummy_node = ListNode(0)
+        dummy_node.next = head
+        self.buildTable(table, dummy_node)
+
+        current_node = dummy_node
+        current_sum  = 0
+        while(current_node):
+            current_sum  = current_sum + current_node.val
+            current_node.next = table[current_sum].next
+            current_node = current_node.next
+
+        return dummy_node.next
+
+    def buildTable(self, table, head):
+        current_node = head
+        sum_to_node = 0
+        while(current_node):
+            sum_to_node = sum_to_node + current_node.val
+            table[sum_to_node] = current_node
+            current_node = current_node.next
+
+
+
 

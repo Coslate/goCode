@@ -1,6 +1,7 @@
 #! /usr/bin/env python3.6
 
 from MyPackage import solution
+import argparse
 
 #Q.
 '''
@@ -23,6 +24,8 @@ Explanation: Sub lists 2 -> 1 -> -3 及 2 -> -2 各自的總和為 0, 所以可�
 #     Main-Routine      #
 #########################
 def main():
+    new_list_head_node = None
+    method = ArgumentParser()
     sol = solution.Solution()
 #Example1
     node_3  = solution.ListNode(3)
@@ -39,7 +42,13 @@ def main():
     print(f'Example1 answer : orig_list = ', end='')
     solution.printList(node_3)
 
-    new_list_head_node = sol.removeZeroSumSublists(node_3)
+    if(method == 1):
+        print("> Use naive method...")
+        new_list_head_node = sol.removeZeroSumSublistsNaive(node_3)
+    else:
+        print("> Use table method...")
+        new_list_head_node = sol.removeZeroSumSublistsTable(node_3)
+
     print(f'Example1 answer : new_list  = ', end='')
     solution.printList(new_list_head_node)
     print(f'------------------------------------------------------')
@@ -64,9 +73,31 @@ def main():
     print(f'Example2 answer : orig_list = ', end='')
     solution.printList(node_n5)
 
-    new_list_head_node = sol.removeZeroSumSublists(node_n5)
+    if(method == 1):
+        print("> Use naive method...")
+        new_list_head_node = sol.removeZeroSumSublistsNaive(node_n5)
+    else:
+        print("> Use table method...")
+        new_list_head_node = sol.removeZeroSumSublistsTable(node_n5)
+
     print(f'Example2 answer : new_list  = ', end='')
     solution.printList(new_list_head_node)
+
+
+#########################
+#     Sub-Routine       #
+#########################
+def ArgumentParser():
+    method                 = 0
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--method", "-method", help="1: Use naive method, O(n^2). 0: Use table method, O(n). Default is 0.")
+
+    args = parser.parse_args()
+    if args.method:
+        method = int(args.method)
+
+    return method
 
 #-----------------Execution------------------#
 if __name__ == '__main__':
